@@ -1,31 +1,35 @@
-# React + TypeScript + Vite
+# Dictionary App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The Dictionary App is a frontend application designed to provide word definitions in a user-friendly interface. It consumes a dictionary API to fetch word definitions based on user input and presents them in a structured format.
 
-Currently, two official plugins are available:
+## Features
+- **Search Bar:** Allows users to input a word and initiate a search for its definition.
+- **Word Section Component:** Renders the definitions of the searched word in a structured layout.
+  - Displays the word, its phonetic pronunciation, and a play button for audio pronunciation (if available).
+  - Lists the meanings of the word, including its part of speech and definitions.
+  - Provides examples for each definition when available.
+  - Handles cases where no definitions are found for the searched word.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React.js: Frontend library for building user interfaces.
+- Chakra UI: Component library for quickly building accessible and responsive web applications.
+- Axios: HTTP client for making requests to the dictionary API.
 
-## Expanding the ESLint configuration
+## Usage
+To use the Dictionary App:
+1. Enter a word into the search bar and press Enter or click the search button.
+2. View the definitions of the searched word presented in the Word Section component.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Setup
+To run the application locally:
+1. Clone this repository.
+2. Install dependencies using `npm install`.
+3. Start the development server using `npm start`.
 
-- Configure the top-level `parserOptions` property like this:
+## Credits
+This application was created as part of the Frontend Mentor challenge. Components and styling may have been inspired by the challenge requirements.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+---
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# dictionary-react
+Feel free to expand or customize this README according to your application's specific details and requirements.
