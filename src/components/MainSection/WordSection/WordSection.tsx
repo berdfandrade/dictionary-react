@@ -1,12 +1,13 @@
-import { Box, Text, Flex, Divider } from "@chakra-ui/react";
+import { Box, Text, Flex, Divider, Link } from "@chakra-ui/react";
 import WordHeading from "../WordHeading/Wordheading";
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import PlayButton from "./PlayButton/PlayButton";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import SearchForAWordPage from "../SearchForAWordPage";
 
 export default function WordSection({ words }) {
-  if(words === undefined){
-    return <SearchForAWordPage/>
+  if (words === undefined) {
+    return <SearchForAWordPage />;
   }
 
   return (
@@ -28,17 +29,11 @@ export default function WordSection({ words }) {
           {word.meanings.map((meaning, index) => (
             <Flex key={index} flexDirection="column" mt={3}>
               <Flex gap={3} alignItems={"center"} flexDir="row">
-                <Text as='b'>
-                  {meaning.partOfSpeech}
-                </Text>
+                <Text as="b">{meaning.partOfSpeech}</Text>
                 <Divider />
               </Flex>
-              <Text
-                mb={5}
-                color={"gray.400"}
-                mt={5}
-              >
-               Meaning
+              <Text mb={5} color={"gray.400"} mt={5}>
+                Meaning
               </Text>
               {meaning.definitions.map((definition, idx) => (
                 <Box key={idx} ml={[0, 3]}>
@@ -46,9 +41,7 @@ export default function WordSection({ words }) {
                     <ListItem>
                       <Flex flexDir="row" gap={2}>
                         <Text color="#b47ddf">•</Text>
-                        <Text mb={3}>
-                          {definition.definition}
-                        </Text>
+                        <Text mb={3}>{definition.definition}</Text>
                       </Flex>
                     </ListItem>
                   </UnorderedList>
@@ -66,9 +59,17 @@ export default function WordSection({ words }) {
           ))}
         </Box>
       ))}
-      <Divider/>
+      <Divider mb={6}/>
       <Text>
-        Source {words[0].sourceUrls[0]}
+        <Flex flexDir="row" gap={7}>
+          <Text color='gray.400'>Source</Text>
+          <Flex flexDir={'row'} alignItems={'center'}>
+            <Link href={words[0].sourceUrls[0]} >
+              {words[0].sourceUrls[0]}
+            </Link>
+            <ExternalLinkIcon ml={2} />
+            </Flex>
+        </Flex>
       </Text>
     </>
   );
