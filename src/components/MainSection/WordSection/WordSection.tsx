@@ -1,7 +1,6 @@
 import { Box, Text, Flex, Divider, Link } from "@chakra-ui/react";
 import WordHeading from "../WordHeading/Wordheading";
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import PlayButton from "./PlayButton/PlayButton";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import SearchForAWordPage from "../SearchForAWordPage";
 
